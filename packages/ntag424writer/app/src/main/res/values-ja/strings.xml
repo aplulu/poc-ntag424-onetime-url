@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">NTAG 424 Writer</string>
+    <string name="settings">設定</string>
+    <string name="about">このアプリについて</string>
+    <string name="license">ライセンス</string>
     <string name="tag_written_successfully">タグの書き込みに成功しました</string>
     <string name="tag_written_failed">タグの書き込みに失敗しました</string>
     <string name="authentication_failed">"認証に失敗しました</string>

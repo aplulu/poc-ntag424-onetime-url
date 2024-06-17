@@ -8,9 +8,12 @@ import android.nfc.Tag
 import android.nfc.tech.IsoDep
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.IntentCompat
 import net.bplearning.ntag424.DnaCommunicator
 import net.bplearning.ntag424.card.KeyInfo
@@ -26,7 +29,7 @@ import net.bplearning.ntag424.sdm.NdefTemplateMaster
 import net.bplearning.ntag424.sdm.SDMSettings
 import net.bplearning.ntag424.util.ByteUtil
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "NTAG424Writer.MainActivity"
     }
@@ -35,6 +38,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
     }
 
     override fun onResume() {
@@ -60,6 +66,22 @@ class MainActivity : ComponentActivity() {
             onNewNFCIntent(intent)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 
 
     private fun registerNFC() {
