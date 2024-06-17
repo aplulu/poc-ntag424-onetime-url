@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">NTAG 424 Writer</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="license">License</string>
     <string name="tag_written_successfully">Tag written successfully</string>
     <string name="tag_written_failed">Tag writing failed</string>
     <string name="authentication_failed">"Authentication failed</string>

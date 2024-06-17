@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+    implementation("androidx.preference:preference-ktx:1.2.0")
     implementation(libs.androidx.material3)
     implementation(libs.material)
     testImplementation(libs.junit)
